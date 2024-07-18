@@ -10,5 +10,6 @@
 1. Clona el repositorio:
    ```bash
   https://github.com/JesusEdu20/informatica-ejercicios.git
+  ```
 
 
