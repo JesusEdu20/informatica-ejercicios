@@ -10,15 +10,22 @@ const cargarMenuDeOpciones = () => {
  }
 
 const iniciarPrograma = () => {
- 
+
+let programaActivo = true
+ while (programaActivo === true){
+     
     const opcionSeleccionada = cargarMenuDeOpciones()
-    console.log(opcionSeleccionada)
+  
  if(opcionSeleccionada.toLowerCase() === 'factorial'){
     // limpiar consola
     console.clear()
 
     // calcular factorial 
     const n = readlineSync.questionInt('Introduzca el numero ')
+    if(n < 0 ){
+        console.log('El numero no puede ser negativo')
+        continue;
+    }
     const factorialCalculado = calcularFactorial(n)
     console.log(`El factorial del numero ${n} es ${factorialCalculado}`)
     
@@ -29,9 +36,17 @@ const iniciarPrograma = () => {
     console.clear()
     const n = readlineSync.questionInt('Introduzca el valor de N : Observaciones totales ')
     const x = readlineSync.questionInt('Introduzca el valor de X : Numero de elementos seleccionados ')
+    if(x > n){
+        console.log('El numero de elementos seleccionados no puede ser mayor que el numero de observaciones totales')
+        continue;
+    }
     const numeroDeCombinaciones = calcularCombinatoria(n, x) 
     console.log(numeroDeCombinaciones)
-    
+ }
+ else if(opcionSeleccionada.toLowerCase() === 'cancel'){
+    console.log('cerrando sesion...')
+    programaActivo = false
+ }
  }
 }
 
