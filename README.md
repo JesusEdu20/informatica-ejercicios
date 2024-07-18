@@ -9,6 +9,6 @@
 ### Instrucciones para Empezar
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu_usuario/ejercicios-informatica.git
+  https://github.com/JesusEdu20/informatica-ejercicios.git
 
 
