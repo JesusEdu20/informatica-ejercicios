@@ -2,8 +2,8 @@
 ## Asignatura: informática
 
 ### Desarrollar
-1. Algoritmo que calcule el factorial de un numero dado
-2. Algoritmo para calcular combinatoria sin repetición 
+1. Algoritmo que calcula el factorial de un número dado
+2. Algoritmo para calcular combinatoria sin repetición
 
 
 ### Instrucciones para Empezar
