@@ -1,4 +1,4 @@
-function valorAbsoluto(n){
+function valorAbsoluto(n:number){
     if( n < 0 ){
         return n * (-1)
     }

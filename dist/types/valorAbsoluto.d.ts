@@ -1,1 +1,1 @@
-declare function valorAbsoluto(n: any): any;
+declare function valorAbsoluto(n: number): number;
