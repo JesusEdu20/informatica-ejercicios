@@ -1,9 +1,10 @@
 const readlineSync = require('readline-sync')
 const calcularFactorial = require('./factorial.js')
 const calcularCombinatoria = require('./combinaciones.js')
+const calcularAbsoluto = require('./valorAbsoluto.js')
 
 const cargarMenuDeOpciones = () => {
-    const menuOpciones = ['Factorial', 'Combinatoria']
+    const menuOpciones = ['Factorial', 'Combinatoria', 'Valor absoluto']
     const opcionSeleccionada = readlineSync.keyInSelect(menuOpciones, 'Que deseas calcular?');
     
     return menuOpciones[opcionSeleccionada]
@@ -43,10 +44,17 @@ let programaActivo = true
     const numeroDeCombinaciones = calcularCombinatoria(n, x) 
     console.log(numeroDeCombinaciones)
  }
+ else if(opcionSeleccionada.toLowerCase() === 'valor absoluto'){
+   console.clear()
+   const n = readlineSync.questionInt('Introduzca el numero ')
+   const valorAbsoluto = calcularAbsoluto(n)
+   console.log(`El valor absoluto de ${n} es ${valorAbsoluto}`)
+}
  else if(opcionSeleccionada.toLowerCase() === 'cancel'){
     console.log('cerrando sesion...')
     programaActivo = false
  }
+
  }
 }
 
