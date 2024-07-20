@@ -1,12 +1,12 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const readlineSync = require('readline-sync');
 const calcularFactorial = require('./factorial.js');
 const calcularCombinatoria = require('./combinaciones.js');
 const calcularAbsoluto = require('./valorAbsoluto.js');
 const calcularPromedio = require('./promedio.js');
+const calcularPermutaciones = require('./permutaciones.js');
+const calcularPotencia = require('./potenciacion.js');
 const cargarMenuDeOpciones = () => {
-    const menuOpciones = ['Factorial', 'Combinatoria', 'Valor absoluto', 'Promedio', 'Cerrar sesion'];
+    const menuOpciones = ['Factorial', 'Combinatoria', 'Valor absoluto', 'Promedio', 'Permutaciones', 'potenciacion', 'Cerrar sesion'];
     const opcionSeleccionada = readlineSync.keyInSelect(menuOpciones, 'Que deseas calcular?');
     return menuOpciones[opcionSeleccionada];
 };
@@ -66,6 +66,31 @@ const iniciarPrograma = () => {
             promedio = calcularPromedio(...cantidades);
             cantidades.forEach(cantidad => console.log(`Cantidad ${cantidad}`));
             console.log(`El promedio de las cantidades es: ${promedio}`);
+        }
+        else if (opcionSeleccionada.toLowerCase() === 'permutaciones') {
+            // limpiar consola
+            console.clear();
+            const n = readlineSync.questionInt('Introduzca el valor de N : Observaciones totales ');
+            const x = readlineSync.questionInt('Introduzca el valor de X : Numero de elementos seleccionados ');
+            if (x > n) {
+                console.log('El numero de elementos seleccionados no puede ser mayor que el numero de observaciones totales');
+                continue;
+            }
+            const numeroDeCombinaciones = calcularPermutaciones(n, x);
+            console.log(numeroDeCombinaciones);
+        }
+        if (opcionSeleccionada.toLowerCase() === 'potenciacion') {
+            // limpiar consola
+            console.clear();
+            // calcular factorial 
+            const n = readlineSync.questionInt('Introduzca el valor de N : numero ');
+            const x = readlineSync.questionInt('Introduzca el valor de X : potencia ');
+            if (x >= 0 && x % 2 !== 0) {
+                console.log('La potencia debe ser un numero entero positivo');
+                continue;
+            }
+            const potencia = calcularPotencia(n, x);
+            console.log(`El numero ${n} elevado a la potencia ${x} es igual a ${potencia}`);
         }
         else if (opcionSeleccionada.toLowerCase() === 'cerrar sesion') {
             console.log('cerrando sesion...');
