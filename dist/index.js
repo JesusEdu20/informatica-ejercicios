@@ -6,7 +6,7 @@ const calcularPromedio = require('./promedio.js');
 const calcularPermutaciones = require('./permutaciones.js');
 const calcularPotencia = require('./potenciacion.js');
 const cargarMenuDeOpciones = () => {
-    const menuOpciones = ['Factorial', 'Combinatoria', 'Valor absoluto', 'Promedio', 'Permutaciones', 'potenciacion', 'Cerrar sesion'];
+    const menuOpciones = ['Factorial', 'Combinatoria', 'Valor absoluto', 'Promedio', 'Permutaciones', 'potenciacion', 'Cerrar sesion', 'Autores del programa'];
     const opcionSeleccionada = readlineSync.keyInSelect(menuOpciones, 'Que deseas calcular?');
     return menuOpciones[opcionSeleccionada];
 };
@@ -91,6 +91,10 @@ const iniciarPrograma = () => {
             }
             const potencia = calcularPotencia(n, x);
             console.log(`El numero ${n} elevado a la potencia ${x} es igual a ${potencia}`);
+        }
+        else if (opcionSeleccionada.toLowerCase() === 'autores del programa') {
+            console.clear();
+            console.log(`Estudiantes: Zuzej Crespo, Samuel Mosquera, Jesus Castillo `);
         }
         else if (opcionSeleccionada.toLowerCase() === 'cerrar sesion') {
             console.log('cerrando sesion...');
